@@ -32,7 +32,10 @@ $(function() {
 
       // This is how we integrate with FilePreviews.io
       // Look mom, no servers!
-      previews.generate(url, function(err, result) {
+      var options = {
+        metadata: ['all']
+      };
+      previews.generate(url, options, function(err, result) {
         if (err) {
           $metadataConsole.text('Something went wrong...');
           $previewImage.attr('src', 'http://i.imgur.com/caZYo6v.jpg');
