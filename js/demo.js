@@ -26,7 +26,7 @@ $(function() {
 
     if (url) {
       $resultsSection.show();
-      $previewImage.attr('src', previews.getPreviewURL(url));
+      $previewImage.attr('src', 'img/spinner.gif');
       $previewImageLink.attr('href', '');
       $metadataConsole.html('Processing, please wait...');
 
