@@ -69,6 +69,11 @@ a {
 
 .home-signup-button {
     border-radius: 0;
+    background-color: #0AC591;
+}
+
+.home-signup-button:hover {
+    background-color: #18a871;
 }
 
 .section-header {
@@ -172,6 +177,10 @@ a {
 
 .preview-layer {
     max-width: 100%;
+}
+
+#widthField {
+    margin-bottom: 5px;
 }
 
 
