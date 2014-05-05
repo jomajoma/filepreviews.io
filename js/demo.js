@@ -74,6 +74,9 @@ $(function() {
     $('.preview-hr').remove();
     $('.preview-h5').remove();
     $('.preview-layer').remove();
+
+    window.location.hash = '#';
+    window.location.hash = '#anchorInteractiveDemo';
   }
 
   function displayLayers(psd) {
