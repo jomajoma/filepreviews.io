@@ -116,6 +116,10 @@ a {
     color:white;
 }
 
+.demo-button-internal {
+    margin-bottom:10px;
+}
+
 .demo-button:hover {
     color:white;
     background-color: #0a5dea;
@@ -138,7 +142,37 @@ a {
     margin-bottom:30px;
 }
 
+#openDemoWrapper {
+    display:none;
+}
 
+#demoResultsContainer {
+    display:none;
+}
+
+.examples-wrapper {
+    text-align: left;
+}
+
+.demo-form-wrapper {
+    margin: 30px;
+}
+
+.examples-options-wrapper {
+    text-align: left;
+}
+
+#jsonConsole {
+    text-align: left;
+}
+
+#previewImage {
+    max-width:100%;
+}
+
+.preview-layer {
+    max-width: 100%;
+}
 
 
 /* xs */

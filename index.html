@@ -90,17 +90,108 @@
   </div>
   <!-- /.container page-content -->
 
-  <div class="demo-row">
-    <div class="container">
+  <div class="demo-row" id="demoWrapper">
+    <div class="container" id="closedDemoWrapper">
       <div class="row">
         <div class="col-sm-12">
-          <span class="demo-text">Try it now</span> <a href="#" class="btn btn-lg demo-button">Upload a file</a> <a href="#" class="btn btn-lg btn-link demo-link">More options</a>
+          <span class="demo-text">Try it now</span> <a href="#" class="btn btn-lg demo-button" id="uploadFileButton1">Upload a file</a> <a href="#" class="btn btn-lg btn-link demo-link" id="moreOptionsLink">More options</a>
         </div>
         <!-- /.col-sm-12 -->
       </div>
       <!-- /.row -->
     </div>
     <!-- /.container -->
+
+    <div class="container" id="openDemoWrapper">
+      <div class="row">
+        <div class="col-sm-12">
+          <a href="#" id="demoCloseButton" class="pull-right"><img src="img/close-icon.png" alt="Close" title="Close"></a>
+          <span class="demo-text">Interactive demo</span>
+        </div>
+        <!-- /.col-sm-12 -->
+      </div>
+      <!-- /.row -->
+      <div class="row demo-form-wrapper">
+        <div class="col-sm-12">
+          <form id="demoForm" class="form-inline">
+            <a href="#" id="uploadFileButton2" class="btn demo-button demo-button-internal">Upload a file</a> or <input type="url" id="fileURLField" placeholder="Enter a file url" class="form-control input-lg" required>
+          </form>
+        </div>
+        <!-- /.col-sm-12 -->
+      </div>
+      <!-- /.row -->
+      <div class="row">
+        <div class="col-sm-7 col-sm-offset-3 examples-wrapper">
+          <h5>Try one of the examples</h5>
+          <ul class="list-inline">
+            <li><a href="https://www.filepicker.io/api/file/WHOGzEmPRSGNYKyHRBWk" class="example-link">Adobe Photoshop File (.psd) with multiple layers</a></li>
+            <li><a href="https://www.filepicker.io/api/file/nQsaWFMGQGOnkppU7v8w" class="example-link">Adobe Illustrator File (.ai)</a></li>
+            <li><a href="https://www.filepicker.io/api/file/mbsbe85FTIW6DzYlkav2" class="example-link">Micrsoft Word File (.doc) with multiple pages</a></li>
+            <li><a href="https://www.filepicker.io/api/file/QLOxaa2ETEOMSQ0kx4u1" class="example-link">Microsoft PowerPoint File (.ppt)</a></li>
+            <li><a href="https://www.filepicker.io/api/file/0ehaqJwCTSq4P6jMrix6" class="example-link">PDF File</a></li>
+            <li><a href="https://www.filepicker.io/api/file/0q6IyX0UQVGLAW5WheN4" class="example-link">SVG Image</a></li>
+            <li><a href="https://www.filepicker.io/api/file/3qIPATYQOCIKAG0SMGlG" class="example-link">PNG image with text</a></li>
+            <li><a href="https://www.filepicker.io/api/file/SDWUgqZTOiteVxTpOVkr" class="example-link">JPEG photo with EXIF data</a></li>
+          </ul>
+        </div>
+        <!-- /.col-sm-7 -->
+      </div>
+      <!-- /.row -->
+      <div class="row examples-options-wrapper">
+        <div class="col-sm-3 col-sm-offset-3">
+          <h5>Processing options</h5>
+          <label for="ocrCheckbox">
+            <input type="checkbox" id="ocrCheckbox" value="ocr" checked> OCR
+          </label><br>
+          <label for="psdCheckbox">
+            <input type="checkbox" id="psdCheckbox" value="psd" checked> PSD layers and metadata
+          </label><br>
+          <label for="exifCheckbox">
+            <input type="checkbox" id="exifCheckbox" value="exif" checked> EXIF metadata
+          </label><br>
+        </div>
+        <!-- /.col-sm-3 -->
+        <div class="col-sm-3 col-sm-offset-1">
+          <h5>Preview image size</h5>
+          <input type="text" id="widthField" placeholder="Width" class="form-control">
+          <input type="text" id="heightField" placeholder="Height" class="form-control">
+        </div>
+        <!-- /.col-sm-3 -->
+      </div>
+      <!-- /.row -->
+
+      <div class="row">
+        <div class="col-sm-12">
+          <a href="#" id="submitButton" class="btn btn-lg btn-default">Submit</a>
+        </div>
+        <!-- /.col-sm-12 -->
+      </div>
+
+      <div id="demoResultsContainer">
+        <div class="row">
+          <div class="col-sm-12">
+            <hr>
+          </div>
+          <!-- /.col-sm-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+          <div class="col-sm-6" id="imageContainer">
+            <a href="#" id="previewLink" target="_blank"><img src="img/spinner.gif" id="previewImage"></a>
+          </div>
+          <!-- /.col-sm-6 -->
+          <div class="col-sm-6">
+            <pre id="jsonConsole">Processing, please wait...</pre>
+          </div>
+          <!-- /.col-sm-6 -->
+        </div>
+        <!-- /.row -->
+      </div>
+
+
+    </div>
+    <!-- /#openDemoWrapper.cotainer -->
   </div>
   <!-- /.demo-row -->
 
