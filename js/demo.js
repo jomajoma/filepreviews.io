@@ -30,7 +30,7 @@ $(function() {
   previews = new FilePreviews({debug: true});
 
   // Set filepicker
-  filepicker.setKey('Ah8QlzykQRGcsx1SaObz0z');
+  filepicker.setKey('AL6QPWsKaT6neuH8YjdKbz');
 
   // Functions
   function formSubmit(e) {
