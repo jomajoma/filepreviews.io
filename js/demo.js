@@ -16,6 +16,7 @@ $(function() {
       $ocrCheckbox = $('#ocrCheckbox'),
       $psdCheckbox = $('#psdCheckbox'),
       $exifCheckbox = $('#exifCheckbox'),
+      $multimediaCheckbox = $('#multimediaCheckbox'),
       $widthField = $('#widthField'),
       $heightField = $('#heightField'),
 
@@ -111,7 +112,11 @@ $(function() {
     var options = {};
     options.metadata = [];
 
-    [$ocrCheckbox, $psdCheckbox, $exifCheckbox].forEach(function(opt){
+    var checkboxes = [
+      $ocrCheckbox, $psdCheckbox, $exifCheckbox, $multimediaCheckbox
+    ];
+
+    checkboxes.forEach(function(opt){
       if (opt.is(':checked')) {
         options.metadata.push(opt.val());
       }
