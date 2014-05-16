@@ -106,7 +106,7 @@ $(function() {
       var totalFrames = frames.length,
           currentFrame = -1;
 
-      $('<hr class="preview-hr">Hover over the image above to see animation</h5>').appendTo($imageContainer);
+      $('<hr class="preview-hr"><h5 class="preview-h5">Hover over the image above to see animation</h5>').appendTo($imageContainer);
 
       // Display frames
       frames.forEach(function(frame) {
