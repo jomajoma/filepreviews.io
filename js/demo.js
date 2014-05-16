@@ -1,3 +1,4 @@
+/* global FilePreviews, filepicker */
 $(function() {
   'use strict';
 
@@ -44,7 +45,8 @@ $(function() {
       var options = getFormParams();
       previews.generate(url, options, previewsReady);
     } else {
-      alert('Error: Please upload a file, provide a file url or click on one of the examples.');
+      alert('Error: Please upload a file, provide a file ' +
+            'url or click on one of the examples.');
     }
   }
 
@@ -54,6 +56,7 @@ $(function() {
       $previewImage.attr('src', 'http://i.imgur.com/caZYo6v.jpg');
       $previewLink.attr('href', '#');
     } else {
+      console.log(result);
       $previewImage.attr('src', result.previewURL);
       $previewLink.attr('href', result.previewURL);
       $jsonConsole.html(JSON.stringify(result.metadata, null, ' '));
@@ -63,13 +66,23 @@ $(function() {
         var psd = result.metadata.extra_data.psd;
         if (psd) displayLayers(psd);
       } catch (err) {}
+
+      // Check if file is a video to do animation on hover
+      try {
+        var video = result.metadata.extra_data.multimedia;
+        if (video) createVideoAnim(result.metadata.thumbnails);
+      } catch (err) {}
     }
   }
 
   function cleanResultsArea() {
     $previewImage.attr('src', 'img/spinner.gif');
+    $previewImage.off('mouseenter');
+    $previewImage.off('mouseleave');
     $previewLink.attr('href', '#');
     $jsonConsole.html('Processing, please wait...');
+
+    $('.preloaded-img').remove();
 
     $demoResultsContainer.show();
     $('.preview-hr').remove();
@@ -86,6 +99,49 @@ $(function() {
       $('<hr class="preview-hr"><h5 class="preview-h5">' + layer.type + ': ' + layer.name + '</h5>').appendTo($imageContainer);
       $('<img src="' + layer.url + '" class="preview-layer">').appendTo($imageContainer);
     });
+  }
+
+  function createVideoAnim(frames) {
+    var playing = false;
+
+    if (frames.length > 0) {
+      var totalFrames = frames.length,
+          currentFrame = -1;
+
+      // Preload images hack
+      frames.forEach(function(frame) {
+        $('body').append('<img src="'+ frame.url +'" style="display:none" class="preloaded-img">');
+      });
+
+      var startAnimation = function() {
+        if (playing) {
+          setTimeout(function() {
+            currentFrame++;
+
+            if (currentFrame > totalFrames - 1) {
+              currentFrame = 0;
+            }
+
+            // Set the image
+            $previewImage.attr('src', frames[currentFrame].url);
+
+            // Loop to next frame
+            startAnimation(frames);
+          }, 1000);
+        }
+      };
+
+      var stopAnimation = function() {
+        playing = false;
+      };
+
+      $previewImage.mouseenter(function(event) {
+        playing = true;
+        startAnimation(event);
+      });
+
+      $previewImage.mouseleave(stopAnimation);
+    }
   }
 
   function pickFile(e) {
