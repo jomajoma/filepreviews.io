@@ -82,8 +82,6 @@ $(function() {
     $previewLink.attr('href', '#');
     $jsonConsole.html('Processing, please wait...');
 
-    $('.preloaded-img').remove();
-
     $demoResultsContainer.show();
     $('.preview-hr').remove();
     $('.preview-h5').remove();
@@ -108,9 +106,12 @@ $(function() {
       var totalFrames = frames.length,
           currentFrame = -1;
 
-      // Preload images hack
+      $('<hr class="preview-hr">Hover over the image above to see animation</h5>').appendTo($imageContainer);
+
+      // Display frames
       frames.forEach(function(frame) {
-        $('body').append('<img src="'+ frame.url +'" style="display:none" class="preloaded-img">');
+        $('<hr class="preview-hr">').appendTo($imageContainer);
+        $('<img src="' + frame.url + '" class="preview-layer">').appendTo($imageContainer);
       });
 
       var startAnimation = function() {
