@@ -12,7 +12,7 @@ a {
     margin: 0;
     padding: 0;
     width: 100%;
-    background: red;
+    background: #007FFF;
     background-image: -o-linear-gradient(44deg, #0AC591 0%, #007FFF 100%);
     background-image: -moz-linear-gradient(44deg, #0AC591 0%, #007FFF 100%);
     background-image: -ms-linear-gradient(44deg, #0AC591 0%, #007FFF 100%);
