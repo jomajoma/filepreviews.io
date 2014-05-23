@@ -183,6 +183,34 @@ a {
     margin-bottom: 5px;
 }
 
+.table-formats {
+    color:#929292;
+    text-align: center
+}
+
+.table-formats > tbody > tr > td {
+    border-color: transparent;
+    vertical-align: center;
+}
+
+.format-pill {
+    color: #bfbfbf;
+    border: 2px solid #d1d1d1;
+    padding: 5px 6px;
+    border-radius: 5px;
+    font-weight: bold;
+    min-width: 50px;
+    display:inline-block;
+}
+
+.icon-green {
+    color:#42c904;
+}
+
+.icon-red {
+    color:#fb3115;
+}
+
 
 /* xs */
 @media (min-width: 0px) and (max-width: 767px) {
