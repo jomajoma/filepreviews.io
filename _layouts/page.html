@@ -23,7 +23,7 @@
   <script src="/js/demo.js"></script>
 {% endif %}
 
-<title>{{ page.title }}</title>
+<title>{{ page.title }}{% unless page.is_home %} | FilePreviews.io{% endunless %}</title>
 
 </head>
 <body>
