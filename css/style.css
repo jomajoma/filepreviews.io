@@ -91,6 +91,7 @@ a {
 
 .workflow-wrapper,
 .technologies-wrapper,
+.formats-features-wrapper,
 .client-libraries-wrapper {
     text-align: center;
     padding-top: 50px;
@@ -98,6 +99,10 @@ a {
 
 .client-libraries-wrapper {
     padding: 70px 0;
+}
+
+.formats-features-wrapper {
+    padding: 50px 0;
 }
 
 .demo-row {
