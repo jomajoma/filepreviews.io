@@ -1,7 +1,7 @@
 # FilePreviews.io Website
 This is the website for the FilePreviews.io website.
 
-### Running
+### Updating the site
 
 1. Get the dependencies:
 
