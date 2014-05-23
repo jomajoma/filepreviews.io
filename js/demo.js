@@ -70,7 +70,9 @@ $(function() {
       // Check if file is a video to do animation on hover
       try {
         var video = result.metadata.extra_data.multimedia;
-        if (video) createVideoAnim(result.metadata.thumbnails);
+        if (video && result.metadata.type === 'video') {
+          createVideoAnim(result.metadata.thumbnails);
+        }
       } catch (err) {}
     }
   }
