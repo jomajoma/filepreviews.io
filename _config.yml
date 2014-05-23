@@ -1,0 +1,6 @@
+url: http://filepreviews.io
+safe: true
+lsi: false
+source: .
+destination: ./public
+

@@ -1,322 +1,222 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset=utf-8 />
-<meta name="description" content="An API to generate image previews and metadata for almost any kind of file" />
+---
+layout: page
+title: "FilePreviews.io: An API to generate image previews and metadata for almost any kind of file"
+is_home: true
+extra_js: true
+---
 
-<meta property="og:title" content="FilePreviews.io"/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="http://filepreviews.io"/>
-<meta property="og:image" content="http://filepreviews.io/img/filepreviews-social.png"/>
-<meta property="og:site_name" content="FilePreviews"/>
-<meta property="fb:admins" content="501641940"/>
-<meta property="og:description" content="An API to generate image previews and metadata for almost any kind of file"/>
-
-<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<link rel="icon" type="image/x-icon" href="img/favicon.ico" />
-
-<script src="https://api.filepicker.io/v1/filepicker.js"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-<script src="https://dufozrddxzwdn.cloudfront.net/latest/filepreviews.min.js"></script>
-<script src="js/demo.js"></script>
-
-<title>FilePreviews.io: An API to generate image previews and metadata for almost any kind of file</title>
-
-</head>
-<body>
-
-  <header class="full-width header">
-    <div class="container">
-
-      <div class="row">
-        <div class="col-xs-6">
-          <a href="index.html"><img src="img/filepreviews-logo.png" alt="FilePreviews"></a>
+<div class="container page-content">
+  <div class="row">
+    <div class="col-sm-12">
+      <form class="form-inline" action="http://getblimp.us2.list-manage.com/subscribe/post?u=ec5219e9529f1d6184387f0e6&amp;id=8a58fa994c" method="post" target="_blank" name="mc-embedded-subscribe-form">
+        <div class="home-signup-wrapper">
+          <h4 class="home-signup-header">Get invited to the private beta before anyone else</h4>
+          <input type="email" placeholder="Email address" name="EMAIL" class="form-control input-lg home-signup-input" required>
+          <input type="hidden" name="b_ec5219e9529f1d6184387f0e6_8a58fa994c" value="">
+          <button type="submit" class="btn btn-success btn-lg home-signup-button">Get invitation</button>
         </div>
-        <!-- /.col-xs-6 -->
-        <div class="col-sm-6">
-          <ul class="list-inline pull-right">
-            <li style="position:relative; top: 5px;"><a href="https://twitter.com/share" class="twitter-share-button" data-related="blimp" data-count="none">Tweet</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
-            <li><iframe src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffilepreviews.io&amp;width&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35&amp;appId=688910321181010" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:35px; width:55px; position:relative; top: 20px;" allowTransparency="true"></iframe></li>
-            <li><a href="mailto:hello@getblimp.com?subject=FilePreviews.io" class="signup-link">Contact us</a></li>
-          </ul>
-        </div>
-        <!-- /.col-sm-6 -->
-      </div>
-      <!-- /.row -->
-
-      <div class="row">
-        <div class="col-xs-12 home-header-text-wrapper">
-          <h1 class="home-header-text">Thumbnails and metadata<br>for almost any kind of file</h1>
-          <p class="home-header-subtext">An easy to use API that allows your app to do all sorts<br>of awesome things with files. Server optional.</p>
-        </div>
-      </div>
-      <!-- /.row -->
-
+        <!-- /.home-signup-wrapper -->
+      </form>
     </div>
-    <!-- /.container -->
-  </header>
-  <!-- /.full-width.header -->
+    <!-- /.col-sm-12 -->
+  </div>
+  <!-- /.row -->
 
+  <div class="row">
+    <div class="col-sm-12">
+      <h3 class="section-header">We take care of the difficult part</h3>
+      <p class="section-copy">You just send us a file and we generate an image preview of every page, layer, OCR text, EXIF metadata<br class="hidden-xs">and much more. We can work with Word, PowerPoint, Photoshop, Illustrator, RAW, PDF, audio and video files.</p>
+    </div>
+    <!-- /.col-sm-12 -->
+  </div>
+  <!-- /.row -->
+  <div class="row">
+    <div class="col-sm-12 workflow-wrapper">
+      <img src="img/filepreviews-workflow.png" alt="FilePreview workflow chart" class="workflow-image">
+    </div>
+    <!-- /.col-sm-12 -->
+  </div>
+  <!-- /.row -->
+</div>
+<!-- /.container page-content -->
 
-  <div class="container page-content">
+<div class="demo-row" id="demoWrapper">
+  <div class="container" id="closedDemoWrapper">
     <div class="row">
       <div class="col-sm-12">
-        <form class="form-inline" action="http://getblimp.us2.list-manage.com/subscribe/post?u=ec5219e9529f1d6184387f0e6&amp;id=8a58fa994c" method="post" target="_blank" name="mc-embedded-subscribe-form">
-          <div class="home-signup-wrapper">
-            <h4 class="home-signup-header">Get invited to the private beta before anyone else</h4>
-            <input type="email" placeholder="Email address" name="EMAIL" class="form-control input-lg home-signup-input" required>
-            <input type="hidden" name="b_ec5219e9529f1d6184387f0e6_8a58fa994c" value="">
-            <button type="submit" class="btn btn-success btn-lg home-signup-button">Get invitation</button>
-          </div>
-          <!-- /.home-signup-wrapper -->
+        <span class="demo-text">Try it now</span> <a href="#" class="btn btn-lg demo-button" id="uploadFileButton1">Upload a file</a> <a href="#" class="btn btn-lg btn-link demo-link" id="moreOptionsLink">More options</a>
+      </div>
+      <!-- /.col-sm-12 -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+
+  <div class="container" id="openDemoWrapper">
+    <div class="row">
+      <div class="col-sm-12">
+        <a href="#" id="demoCloseButton" class="pull-right"><img src="img/close-icon.png" alt="Close" title="Close"></a>
+        <span class="demo-text" id="anchorInteractiveDemo">Interactive demo</span>
+      </div>
+      <!-- /.col-sm-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row demo-form-wrapper">
+      <div class="col-sm-12">
+        <form id="demoForm" class="form-inline">
+          <a href="#" id="uploadFileButton2" class="btn demo-button demo-button-internal">Upload a file</a> or <input type="url" id="fileURLField" placeholder="Enter a file url" class="form-control input-lg" required>
         </form>
       </div>
       <!-- /.col-sm-12 -->
     </div>
     <!-- /.row -->
-
     <div class="row">
-      <div class="col-sm-12">
-        <h3 class="section-header">We take care of the difficult part</h3>
-        <p class="section-copy">You just send us a file and we generate an image preview of every page, layer, OCR text, EXIF metadata<br class="hidden-xs">and much more. We can work with Word, PowerPoint, Photoshop, Illustrator, RAW, PDF, audio and video files.</p>
-      </div>
-      <!-- /.col-sm-12 -->
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="col-sm-12 workflow-wrapper">
-        <img src="img/filepreviews-workflow.png" alt="FilePreview workflow chart" class="workflow-image">
-      </div>
-      <!-- /.col-sm-12 -->
-    </div>
-    <!-- /.row -->
-  </div>
-  <!-- /.container page-content -->
-
-  <div class="demo-row" id="demoWrapper">
-    <div class="container" id="closedDemoWrapper">
-      <div class="row">
-        <div class="col-sm-12">
-          <span class="demo-text">Try it now</span> <a href="#" class="btn btn-lg demo-button" id="uploadFileButton1">Upload a file</a> <a href="#" class="btn btn-lg btn-link demo-link" id="moreOptionsLink">More options</a>
-        </div>
-        <!-- /.col-sm-12 -->
-      </div>
-      <!-- /.row -->
-    </div>
-    <!-- /.container -->
-
-    <div class="container" id="openDemoWrapper">
-      <div class="row">
-        <div class="col-sm-12">
-          <a href="#" id="demoCloseButton" class="pull-right"><img src="img/close-icon.png" alt="Close" title="Close"></a>
-          <span class="demo-text" id="anchorInteractiveDemo">Interactive demo</span>
-        </div>
-        <!-- /.col-sm-12 -->
-      </div>
-      <!-- /.row -->
-      <div class="row demo-form-wrapper">
-        <div class="col-sm-12">
-          <form id="demoForm" class="form-inline">
-            <a href="#" id="uploadFileButton2" class="btn demo-button demo-button-internal">Upload a file</a> or <input type="url" id="fileURLField" placeholder="Enter a file url" class="form-control input-lg" required>
-          </form>
-        </div>
-        <!-- /.col-sm-12 -->
-      </div>
-      <!-- /.row -->
-      <div class="row">
-        <div class="col-sm-7 col-sm-offset-3 examples-wrapper">
-          <h5>Try one of the examples</h5>
-          <ul class="list-inline">
-            <li><a href="https://www.filepicker.io/api/file/WHOGzEmPRSGNYKyHRBWk" class="example-link">Adobe Photoshop File (.psd) with multiple layers</a></li>
-            <li><a href="https://www.filepicker.io/api/file/nQsaWFMGQGOnkppU7v8w" class="example-link">Adobe Illustrator File (.ai)</a></li>
-            <li><a href="https://www.filepicker.io/api/file/mbsbe85FTIW6DzYlkav2" class="example-link">Microsoft Word File (.doc) with multiple pages</a></li>
-            <li><a href="https://www.filepicker.io/api/file/QLOxaa2ETEOMSQ0kx4u1" class="example-link">Microsoft PowerPoint File (.ppt)</a></li>
-            <li><a href="https://www.filepicker.io/api/file/0ehaqJwCTSq4P6jMrix6" class="example-link">PDF File</a></li>
-            <li><a href="https://www.filepicker.io/api/file/0q6IyX0UQVGLAW5WheN4" class="example-link">SVG Image</a></li>
-            <li><a href="https://www.filepicker.io/api/file/3qIPATYQOCIKAG0SMGlG" class="example-link">PNG image with text</a></li>
-            <li><a href="https://www.filepicker.io/api/file/SDWUgqZTOiteVxTpOVkr" class="example-link">JPEG photo with EXIF data</a></li>
-            <li><a href="https://www.filepicker.io/api/file/nbBYhC1dT4WEJcgWP0UA" class="example-link">MP4 HD video with multimedia data</a></li>
-            <li><a href="https://www.filepicker.io/api/file/pLmSBz5YQHO0lmcfwynK" class="example-link">WAV audio with multimedia data</a></li>
-            <li><a href="https://www.filepicker.io/api/file/EGf10wbKQ0y5lPjNxNPp" class="example-link">Canon EOS D30 RAW Image</a></li>
-            <li><a href="http://filepreviews.io/" class="example-link">Website screenshot</a></li>
-          </ul>
-        </div>
-        <!-- /.col-sm-7 -->
-      </div>
-      <!-- /.row -->
-      <div class="row examples-options-wrapper">
-        <div class="col-sm-3 col-sm-offset-3">
-          <h5>Processing options</h5>
-          <label for="ocrCheckbox">
-            <input type="checkbox" id="ocrCheckbox" value="ocr" checked> OCR
-          </label><br>
-          <label for="psdCheckbox">
-            <input type="checkbox" id="psdCheckbox" value="psd" checked> PSD layers and metadata
-          </label><br>
-          <label for="exifCheckbox">
-            <input type="checkbox" id="exifCheckbox" value="exif" checked> EXIF metadata
-          </label><br>
-          <label for="multimediaCheckbox">
-            <input type="checkbox" id="multimediaCheckbox" value="multimedia" checked> Multimedia
-          </label><br>
-        </div>
-        <!-- /.col-sm-3 -->
-        <div class="col-sm-3 col-sm-offset-1">
-          <h5>Preview image size</h5>
-          <input type="text" id="widthField" placeholder="Width" class="form-control">
-          <input type="text" id="heightField" placeholder="Height" class="form-control">
-        </div>
-        <!-- /.col-sm-3 -->
-      </div>
-      <!-- /.row -->
-
-      <div class="row">
-        <div class="col-sm-12">
-          <a href="#" id="submitButton" class="btn btn-lg btn-default">Submit</a>
-        </div>
-        <!-- /.col-sm-12 -->
-      </div>
-
-      <div id="demoResultsContainer">
-        <div class="row">
-          <div class="col-sm-12">
-            <hr>
-          </div>
-          <!-- /.col-sm-12 -->
-        </div>
-        <!-- /.row -->
-
-        <div class="row">
-          <div class="col-sm-6" id="imageContainer">
-            <a href="#" id="previewLink" target="_blank"><img src="img/spinner.gif" id="previewImage"></a>
-          </div>
-          <!-- /.col-sm-6 -->
-          <div class="col-sm-6">
-            <pre id="jsonConsole">Processing, please wait...</pre>
-          </div>
-          <!-- /.col-sm-6 -->
-        </div>
-        <!-- /.row -->
-      </div>
-
-
-    </div>
-    <!-- /#openDemoWrapper.cotainer -->
-  </div>
-  <!-- /.demo-row -->
-
-  <div class="container">
-    <!-- /.row -->
-    <div class="row">
-      <div class="col-sm-12">
-        <h3 class="section-header">Almost any format under the sun</h3>
-        <p class="section-copy">We have a very long and growing list of supported file types. Each file type<br class="hidden-xs">is treated specially to maximize the amount of data that we extract.</p>
-      </div>
-      <!-- /.col-sm-12 -->
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-3"><br><br>
-        <table class="table table-bordered table-formats">
-          <tbody>
-            <tr>
-              <td><span class="format-pill" title="Adobe Photoshop">PSD</span></td>
-              <td><span class="format-pill" title="Adobe Illustrator">AI</span></td>
-              <td><span class="format-pill" title="Portable Document Format">PDF</span></td>
-              <td><span class="format-pill" title="Portable Network Graphics">PNG</span></td>
-              <td><span class="format-pill">JPEG</span></td>
-            </tr>
-            <tr>
-              <td><span class="format-pill">GIF</span></td>
-              <td><span class="format-pill" title="RAW camera image files">RAW</span></td>
-              <td><span class="format-pill">TIFF</span></td>
-              <td><span class="format-pill" title="Scalable vector graphics">SVG</span></td>
-              <td><span class="format-pill" title="Microsoft Word">DOCX</span></td>
-            </tr>
-            <tr>
-              <td><span class="format-pill" title="Microsoft PowerPoint">PPTX</span></td>
-              <td><span class="format-pill" title="Microsoft Excel">XLSX</span></td>
-              <td><span class="format-pill" title="MPEG4 video">MPEG4</span></td>
-              <td><span class="format-pill" title="MKV Video">MKV</span></td>
-              <td><span class="format-pill">MP3</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <!-- /.col-sm-12 -->
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="col-sm-12 formats-features-wrapper">
-        <a href="formats/index.html" class="client-libraries-link">All formats and features</a>
-      </div>
-      <!-- /.col-sm-12 -->
-    </div>
-    <!-- /.row -->
-  </div>
-  <!-- /.container -->
-
-  <div class="container">
-    <div class="row"><hr></div>
-    <div class="row">
-      <div class="col-sm-12">
-        <h3 class="section-header">Use our API with or without a server</h3>
-        <p class="section-copy">Want to write your app using only client-side technologies? No problem. We have an API just for that.<br class="hidden-xs">If you have a more traditional server application we have a RESTful API that can alert your server when<br class="hidden-xs">we are done generating your previews.</p>
-      </div>
-      <!-- /.col-sm-12 -->
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="col-sm-12 technologies-wrapper">
-        <img src="img/technologies.png" alt="FilePreview technologies" class="technologies-image">
-      </div>
-      <!-- /.col-sm-12 -->
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="col-sm-12 client-libraries-wrapper">
-        <a href="libraries/index.html" class="client-libraries-link">Client libraries</a>
-      </div>
-      <!-- /.col-sm-12 -->
-    </div>
-    <!-- /.row -->
-  </div>
-  <!-- /.container -->
-
-  <div class="container">
-    <div class="row footer">
-      <div class="col-sm-8">
+      <div class="col-sm-7 col-sm-offset-3 examples-wrapper">
+        <h5>Try one of the examples</h5>
         <ul class="list-inline">
-          <li><a href="mailto:hello@getblimp.com?subject=FilePreviews.io" class="footer-link">Send us an email</a></li>
-          <li><a href="http://www.getblimp.com/privacy" class="footer-link">Privacy policy</a></li>
-          <li><a href="http://www.getblimp.com/tos" class="footer-link">Terms of service</a></li>
+          {% for example in site.data.examples %}
+            <li><a href="{{ example.url}}" class="example-link">{{ example.text }}</a></li>
+          {% endfor %}
         </ul>
-        <!-- /.list-inline -->
       </div>
-      <!-- /.col-sm-8 -->
-      <div class="col-sm-4">
-        <div class="pull-right">
-          Made with love by <a href="http://getblimp.com/"><img src="img/blimp-logo.png" alt="Blimp"></a>
-        </div>
-      </div>
-      <!-- /.col-sm-4 -->
+      <!-- /.col-sm-7 -->
     </div>
     <!-- /.row -->
+    <div class="row examples-options-wrapper">
+      <div class="col-sm-3 col-sm-offset-3">
+        <h5>Processing options</h5>
+        <label for="ocrCheckbox">
+          <input type="checkbox" id="ocrCheckbox" value="ocr" checked> OCR
+        </label><br>
+        <label for="psdCheckbox">
+          <input type="checkbox" id="psdCheckbox" value="psd" checked> PSD layers and metadata
+        </label><br>
+        <label for="exifCheckbox">
+          <input type="checkbox" id="exifCheckbox" value="exif" checked> EXIF metadata
+        </label><br>
+        <label for="multimediaCheckbox">
+          <input type="checkbox" id="multimediaCheckbox" value="multimedia" checked> Multimedia
+        </label><br>
+      </div>
+      <!-- /.col-sm-3 -->
+      <div class="col-sm-3 col-sm-offset-1">
+        <h5>Preview image size</h5>
+        <input type="text" id="widthField" placeholder="Width" class="form-control">
+        <input type="text" id="heightField" placeholder="Height" class="form-control">
+      </div>
+      <!-- /.col-sm-3 -->
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+      <div class="col-sm-12">
+        <a href="#" id="submitButton" class="btn btn-lg btn-default">Submit</a>
+      </div>
+      <!-- /.col-sm-12 -->
+    </div>
+
+    <div id="demoResultsContainer">
+      <div class="row">
+        <div class="col-sm-12">
+          <hr>
+        </div>
+        <!-- /.col-sm-12 -->
+      </div>
+      <!-- /.row -->
+
+      <div class="row">
+        <div class="col-sm-6" id="imageContainer">
+          <a href="#" id="previewLink" target="_blank"><img src="img/spinner.gif" id="previewImage"></a>
+        </div>
+        <!-- /.col-sm-6 -->
+        <div class="col-sm-6">
+          <pre id="jsonConsole">Processing, please wait...</pre>
+        </div>
+        <!-- /.col-sm-6 -->
+      </div>
+      <!-- /.row -->
+    </div>
+
+
   </div>
+  <!-- /#openDemoWrapper.cotainer -->
+</div>
+<!-- /.demo-row -->
 
-  <!-- GA Tracking -->
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<div class="container">
+  <!-- /.row -->
+  <div class="row">
+    <div class="col-sm-12">
+      <h3 class="section-header">Almost any format under the sun</h3>
+      <p class="section-copy">We have a very long and growing list of supported file types. Each file type<br class="hidden-xs">is treated specially to maximize the amount of data that we extract.</p>
+    </div>
+    <!-- /.col-sm-12 -->
+  </div>
+  <!-- /.row -->
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3"><br><br>
+      <table class="table table-bordered table-formats">
+        <tbody>
+          <tr>
+            <td><span class="format-pill" title="Adobe Photoshop">PSD</span></td>
+            <td><span class="format-pill" title="Adobe Illustrator">AI</span></td>
+            <td><span class="format-pill" title="Portable Document Format">PDF</span></td>
+            <td><span class="format-pill" title="Portable Network Graphics">PNG</span></td>
+            <td><span class="format-pill">JPEG</span></td>
+          </tr>
+          <tr>
+            <td><span class="format-pill">GIF</span></td>
+            <td><span class="format-pill" title="RAW camera image files">RAW</span></td>
+            <td><span class="format-pill">TIFF</span></td>
+            <td><span class="format-pill" title="Scalable vector graphics">SVG</span></td>
+            <td><span class="format-pill" title="Microsoft Word">DOCX</span></td>
+          </tr>
+          <tr>
+            <td><span class="format-pill" title="Microsoft PowerPoint">PPTX</span></td>
+            <td><span class="format-pill" title="Microsoft Excel">XLSX</span></td>
+            <td><span class="format-pill" title="MPEG4 video">MPEG4</span></td>
+            <td><span class="format-pill" title="MKV Video">MKV</span></td>
+            <td><span class="format-pill">MP3</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- /.col-sm-12 -->
+  </div>
+  <!-- /.row -->
+  <div class="row">
+    <div class="col-sm-12 formats-features-wrapper">
+      <a href="/formats" class="client-libraries-link">All formats and features</a>
+    </div>
+    <!-- /.col-sm-12 -->
+  </div>
+  <!-- /.row -->
+</div>
+<!-- /.container -->
 
-    ga('create', 'UA-25728534-6', 'filepreviews.io');
-    ga('send', 'pageview');
-
-  </script>
-</body>
-</html>
+<div class="container">
+  <div class="row"><hr></div>
+  <div class="row">
+    <div class="col-sm-12">
+      <h3 class="section-header">Use our API with or without a server</h3>
+      <p class="section-copy">Want to write your app using only client-side technologies? No problem. We have an API just for that.<br class="hidden-xs">If you have a more traditional server application we have a RESTful API that can alert your server when<br class="hidden-xs">we are done generating your previews.</p>
+    </div>
+    <!-- /.col-sm-12 -->
+  </div>
+  <!-- /.row -->
+  <div class="row">
+    <div class="col-sm-12 technologies-wrapper">
+      <img src="img/technologies.png" alt="FilePreview technologies" class="technologies-image">
+    </div>
+    <!-- /.col-sm-12 -->
+  </div>
+  <!-- /.row -->
+  <div class="row">
+    <div class="col-sm-12 client-libraries-wrapper">
+      <a href="/libraries" class="client-libraries-link">Client libraries</a>
+    </div>
+    <!-- /.col-sm-12 -->
+  </div>
+  <!-- /.row -->
+</div>
+<!-- /.container -->

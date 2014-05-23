@@ -6,7 +6,8 @@
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -22,3 +23,10 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+Gemfile.lock
+
+# Ignore bundler config
+/.bundle
+
+# Ignore the build directory
+/public

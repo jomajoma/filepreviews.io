@@ -1,0 +1,35 @@
+- text: Adobe Photoshop File (.psd) with multiple layers
+  url: https://www.filepicker.io/api/file/WHOGzEmPRSGNYKyHRBWk
+
+- text: Adobe Illustrator File (.ai)
+  url: https://www.filepicker.io/api/file/nQsaWFMGQGOnkppU7v8w
+
+- text: Microsoft Word File (.doc) with multiple pages
+  url: https://www.filepicker.io/api/file/mbsbe85FTIW6DzYlkav2
+
+- text: Microsoft PowerPoint File (.ppt)
+  url: https://www.filepicker.io/api/file/QLOxaa2ETEOMSQ0kx4u1
+
+- text: PDF File
+  url: https://www.filepicker.io/api/file/0ehaqJwCTSq4P6jMrix6
+
+- text: SVG Image
+  url: https://www.filepicker.io/api/file/0q6IyX0UQVGLAW5WheN4
+
+- text: PNG image with text
+  url: https://www.filepicker.io/api/file/3qIPATYQOCIKAG0SMGlG
+
+- text: JPEG photo with EXIF data
+  url: https://www.filepicker.io/api/file/SDWUgqZTOiteVxTpOVkr
+
+- text: MP4 HD video with multimedia data
+  url: https://www.filepicker.io/api/file/nbBYhC1dT4WEJcgWP0UA
+
+- text: WAV audio with multimedia data
+  url: https://www.filepicker.io/api/file/pLmSBz5YQHO0lmcfwynK
+
+- text: Canon EOS D30 RAW Image
+  url: https://www.filepicker.io/api/file/EGf10wbKQ0y5lPjNxNPp
+
+- text: Website screenshot
+  url: http://filepreviews.io/

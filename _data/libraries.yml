@@ -1,0 +1,29 @@
+- name: filepreviews-go
+  url: https://github.com/elbuo8/filepreviews-go
+  description: Go package for interating with the API.
+  type: backend
+
+- name: filepreviews-node
+  url: https://github.com/GetBlimp/filepreviews-node
+  description: Works with Node.js and comes bundled with a CLI tool.
+  type: backend
+
+- name: filepreviews-python
+  url: https://github.com/GetBlimp/filepreviews-python
+  description: Works with Python and comes bundled with a CLI tool.
+  type: backend
+
+- name: filepreviews-ruby
+  url: https://github.com/jonahoffline/filepreviews-ruby
+  description: Ruby gem and command-line application for Filepreviews.io.
+  type: backend
+
+- name: filepreviews.js
+  url: https://github.com/GetBlimp/filepreviews.js
+  description: "Client side JavaScript, no server required."
+  type: frontend
+
+- name: "{{fp-picker-preview}}"
+  url: http://jsbin.com/seyov/edit
+  description: Ember.js component demo.
+  type: frontend

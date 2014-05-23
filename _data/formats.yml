@@ -1,0 +1,499 @@
+- extension: PSD
+  description: Adobe Photoshop
+  type: Image
+  features:
+    ocr: true
+    layers: true
+    exif: true
+    multi: false
+    pages: false
+
+- extension: AI
+  description: Adobe Illustrator
+  type: Image
+  features:
+    ocr: true
+    layers: true
+    exif: true
+    multi: false
+    pages: false
+
+- extension: PDF
+  description: Portable Document Format
+  type: Image
+  features:
+    ocr: true
+    layers: false
+    exif: true
+    multi: false
+    pages: true
+
+- extension: PNG
+  description: Portable Network Graphics
+  type: Image
+  features:
+    ocr: true
+    layers: false
+    exif: true
+    multi: false
+    pages: false
+
+- extension: JPEG
+  description: Joint Photographic Experts Group
+  type: Image
+  features:
+    ocr: true
+    layers: false
+    exif: true
+    multi: false
+    pages: false
+
+- extension: GIF
+  description: Graphics Interchange Format
+  type: Image
+  features:
+    ocr: true
+    layers: false
+    exif: true
+    multi: false
+    pages: false
+
+- extension: BMP
+  description: Bitmap image file
+  type: Image
+  features:
+    ocr: true
+    layers: false
+    exif: true
+    multi: false
+    pages: false
+
+- extension: SVG
+  description: Scalable vector graphics
+  type: Image
+  features:
+    ocr: true
+    layers: false
+    exif: true
+    multi: false
+    pages: false
+
+- extension: TIFF
+  description: Tagged Image File Format
+  type: Image
+  features:
+    ocr: true
+    layers: false
+    exif: true
+    multi: false
+    pages: false
+
+- extension: PBM
+  description: Portable BitMap
+  type: Image
+  features:
+    ocr: true
+    layers: false
+    exif: true
+    multi: false
+    pages: false
+
+- extension: PGM
+  description: Portable GrayMap
+  type: Image
+  features:
+    ocr: true
+    layers: false
+    exif: true
+    multi: false
+    pages: false
+
+- extension: PPM
+  description: Portable PixMap
+  type: Image
+  features:
+    ocr: true
+    layers: false
+    exif: true
+    multi: false
+    pages: false
+
+- extension: CR2
+  description: Canon RAW
+  type: Image
+  features:
+    ocr: true
+    layers: false
+    exif: true
+    multi: false
+    pages: false
+
+- extension: CRW
+  description: Canon RAW
+  type: Image
+  features:
+    ocr: true
+    layers: false
+    exif: true
+    multi: false
+    pages: false
+
+- extension: NEF
+  description: Nikon RAW
+  type: Image
+  features:
+    ocr: true
+    layers: false
+    exif: true
+    multi: false
+    pages: false
+
+- extension: X3F
+  description: Sigma RAW
+  type: Image
+  features:
+    ocr: true
+    layers: false
+    exif: true
+    multi: false
+    pages: false
+
+- extension: ERF
+  description: Epson RAW
+  type: Image
+  features:
+    ocr: true
+    layers: false
+    exif: true
+    multi: false
+    pages: false
+
+- extension: ORF
+  description: Olympus RAW
+  type: Image
+  features:
+    ocr: true
+    layers: false
+    exif: true
+    multi: false
+    pages: false
+
+- extension: DOC / DOCX
+  description: Microsoft Word
+  type: Document
+  features:
+    ocr: true
+    layers: false
+    exif: false
+    multi: false
+    pages: true
+
+- extension: XLS / XLSX
+  description: Microsoft Excel
+  type: Document
+  features:
+    ocr: true
+    layers: false
+    exif: false
+    multi: false
+    pages: true
+
+- extension: PPT / PPTX
+  description: Microsoft PowerPoint
+  type: Document
+  features:
+    ocr: true
+    layers: false
+    exif: false
+    multi: false
+    pages: true
+
+- extension: ODT
+  description: Open document text
+  type: Document
+  features:
+    ocr: true
+    layers: false
+    exif: false
+    multi: false
+    pages: true
+
+- extension: OTT
+  description: Open document text template
+  type: Document
+  features:
+    ocr: true
+    layers: false
+    exif: false
+    multi: false
+    pages: true
+
+- extension: ODS
+  description: Open document spreadsheet
+  type: Document
+  features:
+    ocr: true
+    layers: false
+    exif: false
+    multi: false
+    pages: true
+
+- extension: OTT
+  description: Open document spreadsheet template
+  type: Document
+  features:
+    ocr: true
+    layers: false
+    exif: false
+    multi: false
+    pages: true
+
+- extension: ODP
+  description: Open document presentation
+  type: Document
+  features:
+    ocr: true
+    layers: false
+    exif: false
+    multi: false
+    pages: true
+
+- extension: OTP
+  description: Open document presentation template
+  type: Document
+  features:
+    ocr: true
+    layers: false
+    exif: false
+    multi: false
+    pages: true
+
+- extension: ODG
+  description: Open document graphics
+  type: Document
+  features:
+    ocr: true
+    layers: false
+    exif: false
+    multi: false
+    pages: true
+
+- extension: OTG
+  description: Open document graphics template
+  type: Document
+  features:
+    ocr: true
+    layers: false
+    exif: false
+    multi: false
+    pages: true
+
+- extension: ODC
+  description: Open document chart
+  type: Document
+  features:
+    ocr: true
+    layers: false
+    exif: false
+    multi: false
+    pages: true
+
+- extension: OTC
+  description: Open document chart template
+  type: Document
+  features:
+    ocr: true
+    layers: false
+    exif: false
+    multi: false
+    pages: true
+
+- extension: TXT
+  description: Plain text
+  type: Text
+  features:
+    ocr: true
+    layers: false
+    exif: false
+    multi: false
+    pages: true
+
+- extension: RTF
+  description: Rich text format
+  type: Text
+  features:
+    ocr: true
+    layers: false
+    exif: false
+    multi: false
+    pages: true
+
+- extension: TSV / TAB
+  description: Tab-separeted values
+  type: Text
+  features:
+    ocr: true
+    layers: false
+    exif: false
+    multi: false
+    pages: true
+
+- extension: MP3
+  description: MPEG-1 or MPEG-2 Audio Layer III
+  type: Audio
+  features:
+    ocr: false
+    layers: false
+    exif: false
+    multi: true
+    pages: false
+
+- extension: WAV / AIFF / PCM
+  description: Pulse-code modulation
+  type: Audio
+  features:
+    ocr: false
+    layers: false
+    exif: false
+    multi: true
+    pages: false
+
+- extension: OGG
+  description: Ogg format
+  type: Audio
+  features:
+    ocr: false
+    layers: false
+    exif: false
+    multi: true
+    pages: false
+
+- extension: OPUS
+  description: Opus audio codec
+  type: Audio
+  features:
+    ocr: false
+    layers: false
+    exif: false
+    multi: true
+    pages: false
+
+- extension: OGA
+  description: Vorbis audio
+  type: Audio
+  features:
+    ocr: false
+    layers: false
+    exif: false
+    multi: true
+    pages: false
+
+- extension: RA / RAM
+  description: RealAudio
+  type: Audio
+  features:
+    ocr: false
+    layers: false
+    exif: false
+    multi: true
+    pages: false
+
+- extension: WAV
+  description: Waveform Audio File Format
+  type: Audio
+  features:
+    ocr: false
+    layers: false
+    exif: false
+    multi: true
+    pages: false
+
+- extension: WEBM
+  description: WebM Audio
+  type: Audio
+  features:
+    ocr: false
+    layers: false
+    exif: false
+    multi: true
+    pages: false
+
+- extension: AVI / XVID / DIVX
+  description: Audio Video Interleaved
+  type: Video
+  features:
+    ocr: false
+    layers: false
+    exif: false
+    multi: true
+    pages: false
+
+- extension: MPG / MPEG
+  description: MPEG-2
+  type: Video
+  features:
+    ocr: false
+    layers: false
+    exif: false
+    multi: true
+    pages: false
+
+- extension: MPEG4 / M4V / MP4
+  description: MPEG-4
+  type: Video
+  features:
+    ocr: false
+    layers: false
+    exif: false
+    multi: true
+    pages: false
+
+- extension: MOV
+  description: QuickTime
+  type: Video
+  features:
+    ocr: false
+    layers: false
+    exif: false
+    multi: true
+    pages: false
+
+- extension: MKV
+  description: Matroska
+  type: Video
+  features:
+    ocr: false
+    layers: false
+    exif: false
+    multi: true
+    pages: false
+
+- extension: ASF / WMA / WMV
+  description: Advanced Systems Format
+  type: Video
+  features:
+    ocr: false
+    layers: false
+    exif: false
+    multi: true
+    pages: false
+
+- extension: WMV
+  description: Windows Media Video
+  type: Video
+  features:
+    ocr: false
+    layers: false
+    exif: false
+    multi: true
+    pages: false
+
+- extension: HTML
+  description: Hypertext markup language
+  type: Browser
+  features:
+    ocr: false
+    layers: false
+    exif: false
+    multi: false
+    pages: false
