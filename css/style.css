@@ -6,6 +6,7 @@ body {
 
 a {
     color:#007FFF;
+    cursor: pointer;
 }
 
 .full-width {
@@ -152,9 +153,9 @@ a {
     margin:30px 0;
 }
 
-#openDemoWrapper {
+/*#openDemoWrapper {
     display:none;
-}
+}*/
 
 #demoResultsContainer {
     display:none;
@@ -172,11 +173,11 @@ a {
     text-align: left;
 }
 
-#jsonConsole {
+.jsonConsole {
     text-align: left;
 }
 
-#previewImage {
+.previewImage {
     max-width:100%;
 }
 

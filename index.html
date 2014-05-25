@@ -40,11 +40,11 @@ extra_js: true
 </div>
 <!-- /.container page-content -->
 
-<div class="demo-row" id="demoWrapper">
-  <div class="container" id="closedDemoWrapper">
+<div class="demo-row" id="demoWrapper" ng-app="FPDemo" ng-controller="DemoController" >
+  <div class="container" id="closedDemoWrapper" ng-hide="demoVisible">
     <div class="row">
       <div class="col-sm-12">
-        <span class="demo-text">Try it now</span> <a href="#" class="btn btn-lg demo-button" id="uploadFileButton1">Upload a file</a> <a href="#" class="btn btn-lg btn-link demo-link" id="moreOptionsLink">More options</a>
+        <span class="demo-text">Try it now</span> <a ng-click="chooseFile()" class="btn btn-lg demo-button">Upload a file</a> <a class="btn btn-lg btn-link demo-link" id="moreOptionsLink" ng-click="toggleDemo()">More options</a>
       </div>
       <!-- /.col-sm-12 -->
     </div>
@@ -52,10 +52,10 @@ extra_js: true
   </div>
   <!-- /.container -->
 
-  <div class="container" id="openDemoWrapper">
+  <div class="container" id="openDemoWrapper" ng-show="demoVisible">
     <div class="row">
       <div class="col-sm-12">
-        <a href="#" id="demoCloseButton" class="pull-right"><img src="img/close-icon.png" alt="Close" title="Close"></a>
+        <a ng-click="toggleDemo()" class="pull-right"><img src="img/close-icon.png" alt="Close" title="Close"></a>
         <span class="demo-text" id="anchorInteractiveDemo">Interactive demo</span>
       </div>
       <!-- /.col-sm-12 -->
@@ -63,8 +63,8 @@ extra_js: true
     <!-- /.row -->
     <div class="row demo-form-wrapper">
       <div class="col-sm-12">
-        <form id="demoForm" class="form-inline">
-          <a href="#" id="uploadFileButton2" class="btn demo-button demo-button-internal">Upload a file</a> or <input type="url" id="fileURLField" placeholder="Enter a file url" class="form-control input-lg" required>
+        <form ng-submit="getPreviews()" class="form-inline">
+          <a ng-click="chooseFile()" class="btn demo-button demo-button-internal">Upload a file</a> or <input type="url" placeholder="Enter a file url" class="form-control input-lg" required ng-model="urlField">
         </form>
       </div>
       <!-- /.col-sm-12 -->
@@ -75,7 +75,7 @@ extra_js: true
         <h5>Try one of the examples</h5>
         <ul class="list-inline">
           {% for example in site.data.examples %}
-            <li><a href="{{ example.url}}" class="example-link">{{ example.text }}</a></li>
+            <li><a class="example-link" ng-click="setUrl('{{ example.url }}')">{{ example.text }}</a></li>
           {% endfor %}
         </ul>
       </div>
@@ -85,24 +85,25 @@ extra_js: true
     <div class="row examples-options-wrapper">
       <div class="col-sm-3 col-sm-offset-3">
         <h5>Processing options</h5>
-        <label for="ocrCheckbox">
-          <input type="checkbox" id="ocrCheckbox" value="ocr" checked> OCR
-        </label><br>
-        <label for="psdCheckbox">
-          <input type="checkbox" id="psdCheckbox" value="psd" checked> PSD layers and metadata
-        </label><br>
-        <label for="exifCheckbox">
-          <input type="checkbox" id="exifCheckbox" value="exif" checked> EXIF metadata
-        </label><br>
-        <label for="multimediaCheckbox">
-          <input type="checkbox" id="multimediaCheckbox" value="multimedia" checked> Multimedia
-        </label><br>
+        {% raw %}
+          <div ng-repeat="opt in options">
+            <label for="{{opt.value}}Checkbox">
+              <input
+                type="checkbox"
+                name="metadataOptions[]"
+                value="{{opt.value}}"
+                id="{{opt.value}}Checkbox"
+                ng-model="opt.selected"
+                ng-checked="opt.selected"> {{opt.name}}
+            </label><br>
+          </div>
+        {% endraw %}
       </div>
       <!-- /.col-sm-3 -->
       <div class="col-sm-3 col-sm-offset-1">
         <h5>Preview image size</h5>
-        <input type="text" id="widthField" placeholder="Width" class="form-control">
-        <input type="text" id="heightField" placeholder="Height" class="form-control">
+        <input type="text" ng-model="width" placeholder="Width" class="form-control">
+        <input type="text" ng-model="height" placeholder="Height" class="form-control">
       </div>
       <!-- /.col-sm-3 -->
     </div>
@@ -110,12 +111,12 @@ extra_js: true
 
     <div class="row">
       <div class="col-sm-12">
-        <a href="#" id="submitButton" class="btn btn-lg btn-default">Submit</a>
+        <a ng-click="getPreviews()" class="btn btn-lg btn-default">Submit</a>
       </div>
       <!-- /.col-sm-12 -->
     </div>
 
-    <div id="demoResultsContainer">
+    <div ng-show="resultVisible">
       <div class="row">
         <div class="col-sm-12">
           <hr>
@@ -126,11 +127,20 @@ extra_js: true
 
       <div class="row">
         <div class="col-sm-6" id="imageContainer">
-          <a href="#" id="previewLink" target="_blank"><img src="img/spinner.gif" id="previewImage"></a>
+          {% raw %}
+            <a href="{{previewImage}}" target="_blank">
+              <img src="img/spinner.gif" ng-show="processing">
+              <img src="{{previewImage}}" ng-show="previewImage" ng-hide="processing" class="previewImage">
+            </a>
+          {% endraw %}
         </div>
         <!-- /.col-sm-6 -->
         <div class="col-sm-6">
-          <pre id="jsonConsole">Processing, please wait...</pre>
+          {% raw %}
+            <pre class="jsonConsole" ng-show="result">{{result.metadata|prettyJson}}</pre>
+            <pre class="jsonConsole" ng-show="processing">Processing, please wait...</pre>
+            <pre class="jsonConsole" ng-show="errors">{{errors|prettyJson}}</pre>
+          {% endraw %}
         </div>
         <!-- /.col-sm-6 -->
       </div>
