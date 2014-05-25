@@ -4,7 +4,7 @@
 var previews = new FilePreviews({debug: true});
 filepicker.setKey('AL6QPWsKaT6neuH8YjdKbz');
 
-// ng-stuff
+// ===== ng-stuff =====
 var app = angular.module('FPDemo', []);
 
 app.filter('prettyJson', function() {
@@ -28,24 +28,25 @@ app.controller('DemoController', ['$scope', 'filterFilter', function($scope, fil
     $scope.result = null;
     $scope.resultVisible = true;
 
-    previews.generate($scope.urlField, getOptions(), function(err, result) {
-      console.log(result);
-
-      if (err) {
-        $scope.$apply(function() {
-          $scope.errors = err;
-          $scope.processing = false;
-        });
-      } else {
-        $scope.$apply(function() {
-          $scope.result = result;
-          $scope.previewImage = result.previewURL;
-          $scope.processing = false;
-        });
-      }
-
-    });
+    previews.generate($scope.urlField, getOptions(), handleResults);
   };
+
+  function handleResults(err, result) {
+    console.log(result, '++');
+
+    if (err) {
+      $scope.$apply(function() {
+        $scope.errors = err;
+        $scope.processing = false;
+      });
+    } else {
+      $scope.$apply(function() {
+        $scope.result = result;
+        $scope.previewImage = result.previewURL;
+        $scope.processing = false;
+      });
+    }
+  }
 
   $scope.chooseFile = function() {
     filepicker.pick(function(inkBlob) {
