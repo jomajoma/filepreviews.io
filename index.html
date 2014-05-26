@@ -128,10 +128,12 @@ extra_js: true
       <div class="row">
         <div class="col-sm-6" id="imageContainer">
           {% raw %}
-            <a href="{{previewImage}}" target="_blank">
-              <img src="img/spinner.gif" ng-show="processing">
-              <img src="{{previewImage}}" ng-hide="processing" class="previewImage">
-            </a>
+            <img src="img/spinner.gif" ng-show="processing">
+            <div ng-repeat="thumb in result.metadata.thumbnails">
+              <a href="{{thumb.url}}" target="_blank">
+                <img src="{{thumb.url}}" class="previewImage">
+              </a><hr ng-if="$index + 1 != result.metadata.thumbnails.length">
+            </div>
           {% endraw %}
         </div>
         <!-- /.col-sm-6 -->
