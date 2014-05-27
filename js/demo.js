@@ -23,7 +23,6 @@ app.controller('DemoController', ['$scope', 'filterFilter', function($scope, fil
   $scope.getPreviews = function() {
     if (!$scope.urlField) return;
 
-    window.location.hash = '';
     window.location.hash = 'demoWrapper';
 
     $scope.processing = true;
