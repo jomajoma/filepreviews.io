@@ -19,6 +19,7 @@ app.controller('DemoController', ['$scope', 'filterFilter', function($scope, fil
   $scope.result = null;
   $scope.processing = false;
   $scope.errors = null;
+  $scope.format = 'png';
 
   $scope.getPreviews = function() {
     if (!$scope.urlField) return;
@@ -112,6 +113,7 @@ app.controller('DemoController', ['$scope', 'filterFilter', function($scope, fil
   function getOptions() {
     var options = {};
     options.metadata = [$scope.selection];
+    options.format = $scope.format;
 
     if ($scope.width || $scope.height) {
       options.size = {};
@@ -124,6 +126,7 @@ app.controller('DemoController', ['$scope', 'filterFilter', function($scope, fil
         options.size.height = $scope.height;
       }
     }
+
     return options;
   }
 }]);
