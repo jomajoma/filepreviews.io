@@ -1,7 +1,11 @@
 /* global FilePreviews, filepicker, angular */
 'use strict';
 
-var previews = new FilePreviews({debug: true});
+var previews = new FilePreviews({
+  debug: true,
+  apiKey: '1UcLuZYu7cq4eRfRPjOa9ocNaaVvxS'
+});
+
 filepicker.setKey('AL6QPWsKaT6neuH8YjdKbz');
 
 // ===== ng-stuff =====
