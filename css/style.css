@@ -58,23 +58,25 @@ a {
     border-bottom: 1px solid #f3f3f3;
 }
 
-.home-signup-header {
-    margin-bottom:20px;
-    color:#999999;
+.home-signup-wrapper:last-child {
+    border-top: 1px solid #f3f3f3;
+    border-bottom: 0;
 }
 
-.home-signup-input {
-    border-radius: 0;
-    width: 400px !important;
+.home-signup-text {
+    color: #6A6A6A;
 }
 
 .home-signup-button {
     border-radius: 0;
+    margin-right: 10px;
     background-color: #0AC591;
+    border-color: #09ad7f;
 }
 
 .home-signup-button:hover {
-    background-color: #18a871;
+    background-color: #089e74;
+    border-color: #067254;
 }
 
 .section-header {
