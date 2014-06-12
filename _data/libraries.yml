@@ -15,7 +15,7 @@
 
 - name: filepreviews-ruby
   url: https://github.com/jonahoffline/filepreviews-ruby
-  description: Ruby gem and command-line application for Filepreviews.io.
+  description: Ruby gem and command-line application for FilePreviews.io.
   type: backend
 
 - name: filepreviews.js
@@ -27,3 +27,8 @@
   url: http://jsbin.com/seyov/edit
   description: Ember.js component demo.
   type: frontend
+
+- name: "Blimp Boards"
+  url: https://boards.blimp.io
+  description: First product built that implements FilePreviews.io. And it's open source!
+  type: application

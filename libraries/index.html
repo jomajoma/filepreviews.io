@@ -5,6 +5,14 @@ title: "Client Libraries"
 <div class="container page-content">
   <div class="row">
     <div class="col-sm-12 api-libraries-wrapper">
+      <h3>Applications</h3>
+      <ul>
+        {% for lib in site.data.libraries %}
+          {% if lib.type == 'application' %}
+            <li><a href="{{ lib.url }}">{{ lib.name }}</a> - {{ lib.description }}</li>
+          {% endif %}
+        {% endfor %}
+      </ul>
       <h3>Back-end Libraries</h3>
       <ul>
         {% for lib in site.data.libraries %}
