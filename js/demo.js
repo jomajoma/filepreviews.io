@@ -3,7 +3,7 @@
 
 var previews = new FilePreviews({
   debug: true,
-  apiKey: '1UcLuZYu7cq4eRfRPjOa9ocNaaVvxS'
+  apiKey: 'aPsycB6XsoAlJpzZpstunjzdGput6u'
 });
 
 filepicker.setKey('AqHhfHUMAQIOff76iEW6Oz');
