@@ -12,8 +12,8 @@ filepicker.setKey('AL6QPWsKaT6neuH8YjdKbz');
 var app = angular.module('FPDemo', []);
 
 app.filter('prettyJson', function() {
-  return function(text) {
-    return JSON.stringify(text, null, ' ');
+  return function(obj) {
+    return angular.toJson(obj, true);
   };
 });
 
