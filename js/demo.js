@@ -6,7 +6,7 @@ var previews = new FilePreviews({
   apiKey: '1UcLuZYu7cq4eRfRPjOa9ocNaaVvxS'
 });
 
-filepicker.setKey('AL6QPWsKaT6neuH8YjdKbz');
+filepicker.setKey('AqHhfHUMAQIOff76iEW6Oz');
 
 // ===== ng-stuff =====
 var app = angular.module('FPDemo', []);
