@@ -157,10 +157,6 @@ a {
     margin:30px 0;
 }
 
-/*#openDemoWrapper {
-    display:none;
-}*/
-
 #demoResultsContainer {
     display:none;
 }
@@ -221,6 +217,31 @@ a {
     color:#fb3115;
 }
 
+.nav .nav-header {
+    color: #999999;
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 24px;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 3px 15px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+}
+
+.doc-content p,
+.doc-content li {
+    -webkit-font-smoothing: antialiased;
+    margin: 0 0 12px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.doc-content li {
+    margin: 0;
+}
 
 /* xs */
 @media (min-width: 0px) and (max-width: 767px) {

@@ -1,0 +1,33 @@
+---
+layout: doc
+title: "Knowledge Base"
+header: "Errors"
+---
+
+<p>FilePreviews uses conventional HTTP response codes to indicate success or failure of an API request.</p>
+
+<h4>Description of usual server responses</h4>
+<ul>
+    <li>200 <code>OK</code> - the request was successful (some API calls may return 201 instead).</li>
+    <li>201 <code>Created</code> - the request was successful and a resource was created.</li>
+    <li>400 <code>Bad Request</code> - the request could not be understood or was missing required parameters.</li>
+    <li>401 <code>Unauthorized</code> - authentication failed or user doesn't have permissions for requested operation.</li>
+    <li>403 <code>Forbidden</code> - access denied.</li>
+    <li>404 <code>Not Found</code> - resource was not found.</li>
+    <li>405 <code>Method Not Allowed</code> - requested method is not supported for resource.</li>
+    <li>429 <code>Too Many Requests</code> - exceeded API limits.</li>
+    <li>503 <code>Service Unavailable</code> - service is temporary unavailable (e.g. scheduled Platform Maintenance).</li>
+</ul>
+
+<h4>Example error response: 400 Bad Request</h4>
+<pre>
+    <code>
+        {
+            "error": {
+                "url": [
+                    "This field is required."
+                ]
+            }
+        }
+    </code>
+</pre>
