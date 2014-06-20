@@ -3,5 +3,15 @@ layout: doc
 title: "Knowledge Base"
 header: "Webhooks"
 ---
-Callback URL
-Webhook IP Address list
+<p>For deeper and tigther integrations with FilePreviews we recommed using webhooks. Webhooks let you register a URL that we will POST anytime we have results for requests previews.</p>
+
+<p>Webhooks can be configured in each of your application's settings under <strong>Callback URL</strong>.</p>
+
+<p>Webhook data is sent as plain text in the request's body as a <a href="http://jwt.io/">JSON Web Token</a>.</p>
+
+<p>Webhooks will be sent from the following IP addresses:</p>
+<ul>
+    <li>107.170.102.37</li>
+</ul>
+
+<p>We might occasionally have to adjust this list of IP addresses without any advance notice, we strongly recommend against using IP-based access control to protect your webhook endpoints. Instead, we recommend serving your webhook endpoint over SSL, embedding a secret identifier in the webhook URL that is only known to you and FilePreviews.</p>
