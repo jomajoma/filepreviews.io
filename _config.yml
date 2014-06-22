@@ -10,6 +10,9 @@ sidebar:
   - text: Support
     url: /docs/support.html
     section: General
+  - text: Endpoints
+    url: /docs/endpoints.html
+    section: API Reference
   - text: Authentication
     url: /docs/authentication.html
     section: API Reference

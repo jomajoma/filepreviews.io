@@ -231,7 +231,8 @@ a {
 }
 
 .doc-content p,
-.doc-content li {
+.doc-content li,
+.doc-content td {
     -webkit-font-smoothing: antialiased;
     margin: 0 0 12px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
