@@ -6,24 +6,24 @@ header: "Endpoints"
 
 <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading">GET /v1/</div>
+  <div class="panel-heading">POST /v1/</div>
   <div class="panel-body">
-    <p>Useful endpoint for client-side applications. Returned response can be used for polling until results are available.</p>
+    <p>Returned response can be used for polling until results are available and return an HTTP status code of 200. If application has a <strong>Callback URL</strong> specified, results will also be posted via <a href="/docs/webhooks.html">webhooks</a>.</p>
 
     <h4>Example Request</h4>
     {% highlight bash %}
-      $ curl --get https://api.filepreviews.io/v1/ \
-         --data "url=https://www.filepicker.io/api/file/QLOxaa2ETEOMSQ0kx4u1" \
-         --data "size=320>" \
-         --data "format=png" \
-         --data "metadata=ocr,checksum"
+      $ curl https://api.filepreviews.io/v1/ \
+        -X POST \
+        -H "Content-Type: application/json" \
+        -d '{"url":"https://www.filepicker.io/api/file/QLOxaa2ETEOMSQ0kx4u1","sizes":["320>"],"format":"png","metadata":["all"]}'
     {% endhighlight %}
 
     <h4>Example Response</h4>
     {% highlight json %}
     {
-      "metadata_url": "https://s3.amazonaws.com/demo.filepreviews.io/ceebd7f694e2e7e4645db44e6f052d38d83d81d6bd4be73e4423016bcdf96087/metadata.json",
-      "preview_url": "https://s3.amazonaws.com/demo.filepreviews.io/ceebd7f694e2e7e4645db44e6f052d38d83d81d6bd4be73e4423016bcdf96087/QLOxaa2ETEOMSQ0kx4u1_320>_1.png"
+      "job_id": "edfe97d4-306e-4e90-9bde-a7d35352edc6",
+      "metadata_url": "https://s3.amazonaws.com/demo.filepreviews.io/88397730e686618c37badd5a4922ed99f082fb9634bd4251d86a3218f46992e3/metadata.json",
+      "preview_url": "https://s3.amazonaws.com/demo.filepreviews.io/88397730e686618c37badd5a4922ed99f082fb9634bd4251d86a3218f46992e3/QLOxaa2ETEOMSQ0kx4u1_320>_1.png"
     }
     {% endhighlight %}
   </div>
@@ -49,14 +49,14 @@ header: "Endpoints"
         <td>api_key</td>
         <td><span class="glyphicon glyphicon-remove-circle icon-red"></span></td>
         <td>
-          <p>An application's API Key. It's recommended that you specify this so you can track your usage, bypass anonymous usage throttling, and upload your assets to a specified destination.</p>
+          <p>An application's API Key. It's recommended that you specify this so requests are <a href="/docs/authentication.html">authenticated</a> and you can track your usage, bypass anonymous usage throttling, and upload your assets to a specified destination. Can also be specified via a custom HTTP <code>X-API-KEY</code> request header.</p>
         </td>
       </tr>
       <tr>
-        <td>size</td>
+        <td>sizes</td>
         <td><span class="glyphicon glyphicon-remove-circle icon-red"></span></td>
         <td>
-          <p>The size of the extracted thumbnails, in pixels. Expressed as <strong>width</strong>x<strong>height</strong>. Specifying only the width(e.g "300") will generate a thumbnail with a fixed width and varying height. You can also only shrink larger images to fit into the give size and never enlarge(e.g "300x400>").</p>
+          <p>An array of sizes of the extracted thumbnails, in pixels. Expressed as <strong>width</strong>x<strong>height</strong>. Specifying only the width(e.g "300") will generate a thumbnail with a fixed width and varying height. You can also only shrink larger images to fit into the give size and never enlarge(e.g "300x400>").</p>
         </td>
       </tr>
       <tr>
@@ -70,7 +70,7 @@ header: "Endpoints"
         <td>metadata</td>
         <td><span class="glyphicon glyphicon-remove-circle icon-red"></span></td>
         <td>
-          <p>Comma-separated values of addititional metadata to extract. Possible values are "ocr", "psd", "exif", "ocr", "checksum", "multimedia", and "all".</p>
+          <p>An array of string values of additional metadata to extract. Possible values are "ocr", "psd", "exif", "ocr", "checksum", and "multimedia". You can also specify the special value of "all" in the array to extract all possible metadata.</p>
         </td>
       </tr>
       <tr>
@@ -78,6 +78,22 @@ header: "Endpoints"
         <td><span class="glyphicon glyphicon-remove-circle icon-red"></span></td>
         <td>
           <p>The document pages that you want to extract thumbnails for. You can specify a range or individual pages separated by commas. Example: "1-3" or "1,3,5". Default value is "1".</p>
+        </td>
+      </tr>
+      <tr>
+        <td>data</td>
+        <td><span class="glyphicon glyphicon-remove-circle icon-red"></span></td>
+        <td>
+          <p>A user-specified JavaScript object to attach key-value data. This is useful for storing additional structured information. As an example, you could store a unique identifier from your system that a FilePreviews response belongs to.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>uploader</td>
+        <td><span class="glyphicon glyphicon-remove-circle icon-red"></span></td>
+        <td>
+          <p>A JavaScript object containing settings for the AWS S3 uploader. Available options:</p>
+          <p><code>destination</code> - The path at which the file is to be stored. Example: <code>cards/1</code></p>
+          <p><code>headers</code> - A JavaScript object containing a list of headers to be set for this file on S3. You can find a <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html">list of available headers</a> that can be used.</p>
         </td>
       </tr>
     </tbody>
