@@ -230,6 +230,10 @@ a {
     text-transform: uppercase;
 }
 
+.doc-content {
+    margin-bottom: 40px;
+}
+
 .doc-content p,
 .doc-content li,
 .doc-content td {
