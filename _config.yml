@@ -3,4 +3,28 @@ safe: true
 lsi: false
 source: .
 destination: ./public
-
+sidebar:
+  - text: Getting Started
+    url: /docs/index.html
+    section: General
+  - text: Support
+    url: /docs/support.html
+    section: General
+  - text: Endpoints
+    url: /docs/endpoints.html
+    section: API Reference
+  - text: Metadata
+    url: /docs/metadata.html
+    section: API Reference
+  - text: Authentication
+    url: /docs/authentication.html
+    section: API Reference
+  - text: Errors
+    url: /docs/errors.html
+    section: API Reference
+  - text: Webhooks
+    url: /docs/webhooks.html
+    section: API Reference
+  - text: Changelog
+    url: /docs/changelog.html
+    section: API Reference

@@ -1,0 +1,15 @@
+---
+layout: doc
+title: "Authentication | Knowledge Base"
+header: "Authentication"
+---
+
+<p>You authenticate to the FilePreviews API by providing your application's API Key in the request. You can <a href="https://api.filepreviews.io/apps/create/">create</a> an application for a new API Key or get an API Key from an existing <a href="https://api.filepreviews.io/apps/">application</a>.</p>
+
+<p>If you're planning on making requests from a client-side application with your API Key, you should set your application's <strong>Origin whitelist</strong> setting which authorizes specific origin hostnames to make requests with your API Key. Remember, that should you never expose your Secret Key in any public website's client-side code.</p>
+
+<p>We allow unauthenticated requests to some endpoints. These have a restrictive throttle of 20 requests per hour using the IP address of the incoming request. Throttled requests will return a 429 Too Many Requests response.</p>
+
+<p>Authentication to the API occurs via a custom HTTP <code>X-API-KEY</code> request header.</p>
+
+<p>All API requests must be made over <a href="http://en.wikipedia.org/wiki/HTTP_Secure">HTTPS</a>.</p>

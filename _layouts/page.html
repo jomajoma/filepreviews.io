@@ -1,30 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset=utf-8 />
-<meta name="description" content="An API to generate image previews and metadata for almost any kind of file" />
-
-<meta property="og:title" content="FilePreviews.io"/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="http://filepreviews.io"/>
-<meta property="og:image" content="http://filepreviews.io/img/filepreviews-social.png"/>
-<meta property="og:site_name" content="FilePreviews"/>
-<meta property="fb:admins" content="501641940"/>
-<meta property="og:description" content="An API to generate image previews and metadata for almost any kind of file"/>
-
-<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<link href="/css/style.css" rel="stylesheet" type="text/css" />
-<link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
-
-{% if page.extra_js %}
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.10/angular.min.js"></script>
-  <script src="https://api.filepicker.io/v1/filepicker.js"></script>
-  <script src="https://dufozrddxzwdn.cloudfront.net/latest/filepreviews.min.js"></script>
-  <script src="/js/demo.js"></script>
-{% endif %}
-
-<title>{{ page.title }}{% unless page.is_home %} | FilePreviews.io{% endunless %}</title>
-
+  {% include head.html %}
 </head>
 <body>
   {% include header.html %}

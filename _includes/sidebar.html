@@ -1,0 +1,15 @@
+<ul class="nav nav-pills nav-stacked">
+    {% for link in site.sidebar %}
+
+      {% if forloop.first or link.section != section %}
+          <li class="nav-header">{{ link.section }}</li>
+      {% endif %}
+
+      <li class="{% if page.url == link.url %}active{% endif %}">
+        <a href="{{ link.url }}">{{ link.text }}</a>
+      </li>
+
+      {% assign section = link.section %}
+
+    {% endfor %}
+</ul>
