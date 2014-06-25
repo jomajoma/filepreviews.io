@@ -114,9 +114,15 @@ a {
 .workflow-wrapper,
 .technologies-wrapper,
 .formats-features-wrapper,
+.workflow-docs-wrapper,
 .client-libraries-wrapper {
     text-align: center;
     padding-top: 50px;
+}
+
+.workflow-docs-wrapper {
+    padding: 50px 0 10px;
+    font-size: 20px;
 }
 
 .client-libraries-wrapper {
