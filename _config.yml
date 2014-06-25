@@ -7,6 +7,9 @@ sidebar:
   - text: Getting Started
     url: /docs/index.html
     section: General
+  - text: Storages
+    url: /docs/storages.html
+    section: General
   - text: Support
     url: /docs/support.html
     section: General

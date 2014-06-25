@@ -1,0 +1,46 @@
+---
+layout: doc
+title: "Storages | Knowledge Base"
+header: "Storages"
+---
+
+<h4>Amazon S3</h4>
+<p>Uploads and stores the requested previews into an <a href="https://s3.amazonaws.com/">Amazon S3</a> bucket.</p>
+
+<p>To enable storing files in your specified Amazon S3 bucket, make sure to include your <strong>Access Key ID</strong>, <strong>Secret Access Key</strong>, and <strong>S3 Storage Bucket Name</strong> in your application's Storage settings.</p>
+
+<img class="img-responsive" src="/img/storage-screenshot.png">
+
+<p>You will also need to add some permissions to your bucket so that FilePreviews can access it properly. Here's an example IAM policy containing the minimum required permissions that you can use. Please change <code>BUCKET_NAME</code> and the values for <code>Sid</code> and <code>Resource</code> accordingly.</p>
+
+<p>This policy will grant the minimum required permissions to all your users. We advise you to create a separate Amazon IAM user, and use its User ARN for the <code>Principal</code> value. You can read more information about this in the <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/AccessPolicyLanguage_UseCases_s3_a.html">Bucket Policy Examples guide</a>.</p>
+
+{% highlight json %}
+{
+    "Statement": [
+        {
+            "Sid": "FilePreviewsUpload",
+            "Action": [
+                "s3:PutObject",
+                "s3:PutObjectAcl"
+            ],
+            "Principal": {
+                "AWS": "*"
+            },
+            "Effect": "Allow",
+            "Resource": "arn:aws:s3:::BUCKET_NAME/*"
+        },
+        {
+            "Sid": "FilePreviewsUploadList",
+            "Action": [
+                "s3:ListBucket"
+            ],
+            "Principal": {
+                "AWS": "*"
+            },
+            "Effect": "Allow",
+            "Resource": "arn:aws:s3:::BUCKET_NAME"
+        }
+    ]
+}
+{% endhighlight %}
