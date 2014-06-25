@@ -3,7 +3,7 @@ layout: doc
 title: "Getting Started | Knowledge Base"
 header: "Getting Started"
 ---
-<p>The FilePreviews.io service is composed of a very simple API. There are two endpoints that can be used to request a preview, which happens asynchronously. They both work similarly but are useful for different scenarios and is organized around <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">REST</a>.</p>
+<p>The FilePreviews.io service is composed of a very simple API organized around <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">REST</a>.</p> There's an endpoint that can be used to request a preview, which happens asynchronously. The returned results are useful for different scenarios, allowing you to poll until requested previews and metadata are available, or use <a href="/docs/webhooks.html">webhooks</a>.
 
 <p>We support <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">cross-origin resource sharing</a> to allow you to interact securely with your API from a client-side web application. <a href="http://www.json.org/">JSON</a> will be returned in all responses from the API, including errors.</p>
 
