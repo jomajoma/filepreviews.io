@@ -13,6 +13,9 @@ sidebar:
   - text: Endpoints
     url: /docs/endpoints.html
     section: API Reference
+  - text: Metadata
+    url: /docs/metadata.html
+    section: API Reference
   - text: Authentication
     url: /docs/authentication.html
     section: API Reference
