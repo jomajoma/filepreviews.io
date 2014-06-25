@@ -7,6 +7,8 @@ header: "Webhooks"
 
 <p>Webhooks can be configured in each of your application's settings under <strong>Callback URL</strong>.</p>
 
+<img class="img-responsive" src="/img/webhooks-screenshot.png">
+
 <p>Webhook data is sent as plain text in the request's body as a <a href="http://jwt.io/">JSON Web Token</a>, which is digitally signed using your application's <strong>Secret Key</strong>. You can use one of many available <a href="http://jwt.io/#libraries">libraries</a> to decode the JWT with the same Secret Key. Using JWT allows you to make sure that the contents that are posted to your callback URL are from a trusted source and that they haven't been tampered with.</p>
 
 <p>Webhooks will be sent from the following IP addresses:</p>
