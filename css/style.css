@@ -27,13 +27,30 @@ a {
 }
 
 .signup-link {
-    color:white;
+    color: white;
     font-size: 16px;
     margin-top:15px;
 }
 
 .signup-link:hover {
     color: white;
+}
+
+.signin-link {
+    color: #E4E8FF;
+    font-weight: bold;
+    line-height: 60px;
+    background: rgba(0, 0, 0, 0.09);
+    padding: 9px 18px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.signin-link:hover {
+    color: white;
+    background: rgba(0, 0, 0, 0.3);
+    text-decoration: none;
 }
 
 .home-header-text-wrapper {
