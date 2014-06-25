@@ -116,7 +116,7 @@ app.controller('DemoController', ['$scope', 'filterFilter', function($scope, fil
   // Makes the options hash
   function getOptions() {
     var options = {};
-    options.metadata = [$scope.selection];
+    options.metadata = $scope.selection;
     options.format = $scope.format;
 
     if ($scope.width || $scope.height) {
