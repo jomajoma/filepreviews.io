@@ -115,9 +115,16 @@ app.controller('DemoController', ['$scope', 'filterFilter', function($scope, fil
 
   // Makes the options hash
   function getOptions() {
-    var options = {};
-    options.metadata = $scope.selection;
-    options.format = $scope.format;
+    var options = {
+      'metadata': $scope.selection,
+      'format': $scope.format,
+      'uploader': {
+        'headers': {
+          'Cache-Control': 'max-age=315360000, no-transform, private',
+          'x-amz-acl': 'public-read'
+        }
+      }
+    };
 
     if ($scope.width || $scope.height) {
       options.size = {};
