@@ -45,17 +45,17 @@ app.controller('DemoController', ['$scope', 'filterFilter', function($scope, fil
       });
     } else {
       $scope.$apply(function() {
-        var _result = result;
+        var results = result.metadata.results;
 
         // If psd do play some tricks
-        if (result.metadata.extra_data.psd) {
-          var images = flattenPsdObject(result.metadata.extra_data.psd);
-          _result.metadata.thumbnails = images.map(function(item) {
+        if (result.metadata.results.metadata.psd) {
+          var images = flattenPsdObject(result.metadata.results.metadata.psd);
+          results.thumbnails = images.map(function(item) {
             return {url:item};
           });
         }
 
-        $scope.result = _result;
+        $scope.result = results;
         $scope.processing = false;
       });
     }

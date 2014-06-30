@@ -144,17 +144,17 @@ extra_js: true
         <div class="col-sm-6" id="imageContainer">
           {% raw %}
             <img src="img/spinner.gif" ng-show="processing">
-            <div ng-repeat="thumb in result.metadata.thumbnails">
+            <div ng-repeat="thumb in result.thumbnails">
               <a href="{{thumb.url}}" target="_blank">
                 <img src="{{thumb.url}}" class="previewImage">
-              </a><hr ng-if="$index + 1 != result.metadata.thumbnails.length">
+              </a><hr ng-if="$index + 1 != result.thumbnails.length">
             </div>
           {% endraw %}
         </div>
         <!-- /.col-sm-6 -->
         <div class="col-sm-6">
           {% raw %}
-            <pre class="jsonConsole" ng-show="result">{{result.metadata|prettyJson}}</pre>
+            <pre class="jsonConsole" ng-show="result">{{result|prettyJson}}</pre>
             <pre class="jsonConsole" ng-show="processing">Processing, please wait...</pre>
             <pre class="jsonConsole" ng-show="errors">{{errors|prettyJson}}</pre>
           {% endraw %}
