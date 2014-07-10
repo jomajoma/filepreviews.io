@@ -15,16 +15,16 @@ header: "Privacy & Security"
 <p>All communication between our backend servers is encrypted using industry standard SSL/TLS. There is no option to communicate over insecure channels so there shouldn't be any room for error on this part.</p>
 
 <br><h4>Your storage credentials</h4>
-<p>As part of your setup we require you to enter the credentials of an Amazon S3 bucket where we will the result files from the preview and metadata generation process. This credentials are stored securely using AES encryption.</p>
+<p>As part of your setup, we require you to enter the credentials of an Amazon S3 bucket where we will upload the result files from the preview and metadata generation process. These credentials are stored securely using AES encryption.</p>
 
 <br><h4>About your Amazon S3 bucket</h4>
-<p>As part of you initial setup you need to provide credentials for a bucket on Amazon S3. This bucket is used to store the resulting files after our server generate the previews and metadata.</p>
-<p>We recommend that your make this bucket write-only. This will allow our servers to copy files to it but never read them. This will assure you that once we process your files, our servers no loger have access to them.</p>
+<p>As part of your initial setup, you need to provide credentials for a bucket on Amazon S3. This bucket is used to store the resulting files after our server generate the previews and metadata.</p>
+<p>We recommend that your make this bucket write-only. This will allow our servers to copy files to it but never read them. This will assure you that once we process your files, our servers no longer have access to them.</p>
 <p><a href="/docs/storages.html">Read more</a></p>
 
 <br><h4>Intermediate files</h4>
 <p>In the process of generating previews and extracting metadata from your files some intermediate copies are created on our worker servers. This is unavoidable since our servers need to be able to read the files to produce previews and metadata from them.</p>
-<p>Once your previews are generated we copy the resulting files to your Amazon S3 bucket. That includes all generated images and a JSON file with the metadata you requested. Once that's complete we immediatly and permanently delete everything from our servers. That includes all original files, intermediate files and result files.</p>
+<p>Once your previews are generated we copy the resulting files to your Amazon S3 bucket. That includes all generated images and a JSON file with the metadata you requested. Once that's complete we immediately and permanently delete everything from our servers. That includes all original files, intermediate files and result files.</p>
 <p>Since the resulting product are files we don't store any of that on our database. We only store file name, size, type and other statistics to help us monitor and improve the service. None of your file content is persisted on any of our database at any point.</p>
 
 <br><h4>Storing your files</h4>
