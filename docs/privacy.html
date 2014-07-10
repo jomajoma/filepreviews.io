@@ -22,7 +22,7 @@ header: "Privacy & Security"
 <p>We recommend that your make this bucket write-only. This will allow our servers to copy files to it but never read them. This will assure you that once we process your files, our servers no loger have access to them.</p>
 <p><a href="/docs/storages.html">Read more</a></p>
 
-<br><h4>Intermidiate files</h4>
+<br><h4>Intermediate files</h4>
 <p>In the process of generating previews and extracting metadata from your files some intermediate copies are created on our worker servers. This is unavoidable since our servers need to be able to read the files to produce previews and metadata from them.</p>
 <p>Once your previews are generated we copy the resulting files to your Amazon S3 bucket. That includes all generated images and a JSON file with the metadata you requested. Once that's complete we immediatly and permanently delete everything from our servers. That includes all original files, intermediate files and result files.</p>
 <p>Since the resulting product are files we don't store any of that on our database. We only store file name, size, type and other statistics to help us monitor and improve the service. None of your file content is persisted on any of our database at any point.</p>
