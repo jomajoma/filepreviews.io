@@ -1,5 +1,5 @@
 <ul class="nav nav-pills nav-stacked">
-    {% for link in site.sidebar %}
+    {% for link in site.data.docs %}
 
       {% if forloop.first or link.section != section %}
           <li class="nav-header">{{ link.section }}</li>

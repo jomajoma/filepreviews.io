@@ -1,0 +1,40 @@
+---
+layout: doc
+title: "Privacy & Security | Knowledge Base"
+header: "Privacy & Security"
+---
+
+<br><h4>Communication between your app and our API servers</h4>
+<p>All communication between you application and our API servers is encrypted using industry standard SSL/TLS. There is no option to communicate over insecure channels so there shouldn't be any room for error on this part.</p>
+<p>Once the data is processed we send a webhook to your application with the results. The webhook data is sent as plain text in the request's body as a <a href="http://jwt.io/">JSON Web Token</a>, which is digitally signed using your application's Secret Key.</p>
+<p>Using JWT allows you to make sure that the contents that are posted to your callback URL are from a trusted source and that they haven't been tampered with.</p>
+<p>We recommend that your application uses an SSL/TLS encrypted endpoint to receive this payload in a secure way but this is up to you and your specific needs.</p>
+<p><a href="/docs/webhooks.html">Read more</a></p>
+
+<br><h4>Communication between our API and worker servers</h4>
+<p>All communication between our backend servers is encrypted using industry standard SSL/TLS. There is no option to communicate over insecure channels so there shouldn't be any room for error on this part.</p>
+
+<br><h4>You storage credentials</h4>
+<p>As part of your setup we require you to enter the credentials of an Amazon S3 bucket where we will the result files from the preview and metadata generation process. This credentials are stored securely using AES encryption.</p>
+
+<br><h4>About your Amazon S3 bucket</h4>
+<p>As part of you initial setup you need to provide credentials for a bucket on Amazon S3. This bucket is used to store the resulting files after our server generate the previews and metadata.</p>
+<p>We recommend that your make this bucket write-only. This will allow our servers to copy files to it but never read them. This will assure you that once we process your files, our servers no loger have access to them.</p>
+<p><a href="/docs/storages.html">Read more</a></p>
+
+<br><h4>Intermidiate files</h4>
+<p>In the process of generating previews and extracting metadata from your files some intermediate copies are created on our worker servers. This is unavoidable since our servers need to be able to read the files to produce previews and metadata from them.</p>
+<p>Once your previews are generated we copy the resulting files to your Amazon S3 bucket. That includes all generated images and a JSON file with the metadata you requested. Once that's complete we immediatly and permanently delete everything from our servers. That includes all original files, intermediate files and result files.</p>
+<p>Since the resulting product are files we don't store any of that on our database. We only store file name, size, type and other statistics to help us monitor and improve the service. None of your file content is persisted on any of our database at any point.</p>
+
+<br><h4>Storing your files</h4>
+<p>We don't permanently store your files in any of our servers. Once you request a preview, it will be queued for processing. Processing starts by downloading the file, generating thumbnails and metadata, uploading to storage, notifying via webhook, and then we immediately delete the original and all generated files. We automatically save all uploaded files directly into your custom storage.</p>
+
+<p>To make it easier to get started, if you haven’t put in your custom read-only storage credentials we will store your result files on our servers, but as your usage increases we will kindly ask you to move to your own storage. This storage is meant for development environments and contents might be deleted without notice. Essentially, if you are going to release your product to a production environment, you should add your own storage credentials.</p>
+
+<br><h4>Reporting bugs</h4>
+<p>We take security very seriously. Thank you for taking the time to responsibly disclose any issues you find.</p>
+
+<p>All security bugs in FilePreviews should be reported by email to <a href="mailto:security@getblimp.com">security@getblimp.com</a>. This list is delivered to a subset of the Blimp team who handle security issues. Your email will be acknowledged within 24 hours, and you'll receive a more detailed response to your email within 48 hours indicating the next steps in handling your report.</p>
+
+<p>If you have any suggestions to improve this policy, please send an email to security@getblimp.com.</p>

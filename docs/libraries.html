@@ -1,0 +1,32 @@
+---
+layout: doc
+title: "Client Libraries & Applications | Knowledge Base"
+header: "Client Libraries & Applications"
+---
+
+<br><h4>Applications</h4>
+<ul>
+  {% for lib in site.data.libraries %}
+    {% if lib.type == 'application' %}
+      <li><a href="{{ lib.url }}">{{ lib.name }}</a> - {{ lib.description }}</li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<br><h4>Back-end Libraries</h4>
+<ul>
+  {% for lib in site.data.libraries %}
+    {% if lib.type == 'backend' %}
+      <li><a href="{{ lib.url }}">{{ lib.name }}</a> - {{ lib.description }}</li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<br><h4>Front-end Libraries</h4>
+<ul>
+  {% for lib in site.data.libraries %}
+    {% if lib.type == 'frontend' %}
+      <li><a href="{{ lib.url }}">{{ lib.name }}</a> - {{ lib.description }}</li>
+    {% endif %}
+  {% endfor %}
+</ul>

@@ -1,0 +1,36 @@
+---
+layout: doc
+title: "Features & Formats | Knowledge Base"
+header: "Features & formats"
+---
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Extension</th>
+      <th width="300">Description</th>
+      <th>Type</th>
+      <th>OCR</th>
+      <th>Layers</th>
+      <th>EXIF</th>
+      <th>Multimedia</th>
+      <th>Pages</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for format in site.data.formats %}
+      <tr>
+        <td>{{ format.extension }}</td>
+        <td>{{ format.description }}</td>
+        <td>{{ format.type }}</td>
+        {% for feature in format.features %}
+          {% if feature[1] %}
+            <td><span class="glyphicon glyphicon-ok-circle icon-green"></span></td>
+          {% else %}
+            <td>-</td>
+          {% endif %}
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
