@@ -6,6 +6,10 @@
   url: /docs/features.html
   section: General
 
+- text: "Pricing"
+  url: /docs/pricing.html
+  section: General
+
 - text: "Libraries & Apps"
   url: /docs/libraries.html
   section: General
